@@ -1,0 +1,4 @@
+.venv/
+bible-data/
+**/*.pyc
+bible-data.db
