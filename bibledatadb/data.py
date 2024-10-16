@@ -72,8 +72,27 @@ def populate_data():
             session.add(label)
         session.commit()
 
-    # Commandments Table
+    # Person Verse table
+    with open(rootFolder + 'BibleData-PersonVerse.csv', 'r') as csvfile:
+        personVerseReader = csv.reader(csvfile)
+        fields = next(personVerseReader)
+        for row in personVerseReader:
+            personVerse = db.PersonVerse()
+            personVerse.PersonVerseID = row[0]
+            personVerse.ReferenceID = row[1]
+            personVerse.PersonLabelID = row[2]
+            personVerse.PersonID = row[3]
+            personVerse.PersonLabel = row[4]
+            try:
+                personVerse.PersonLabelCount = int(row[5])
+            except:
+                personVerse.PersonLabelCount = 0
+            personVerse.PersonVerseSequence = int(row[6])
+            personVerse.PersonVerseNotes = row[7]
+            session.add(personVerse)
+        session.commit()
 
+    # Commandments Table
     with open(rootFolder + 'BibleData-Commandments.csv', 'r') as csvfile:
         commandmentReader = csv.reader(csvfile)
         fields = next(commandmentReader)

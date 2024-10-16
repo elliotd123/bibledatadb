@@ -60,6 +60,20 @@ class PersonLabel(Base):
     #UnknownColumnS = Column(Integer)
     #UnknownColumnT = Column(Integer)
 
+class PersonVerse(Base):
+    """BibleData-PersonVerse table definition"""
+    __tablename__ = 'person_verse'
+    ID = Column(Integer, primary_key=True)
+    PersonVerseID = Column(String(256), index=True)
+    ReferenceID = Column(String(256), index=True)
+    PersonLabelID = Column(String(256), index=True)
+    PersonID = Column(String(256), index=True)
+    PersonLabel = Column(String(256), index=True)
+    PersonLabelCount = Column(Integer)
+    PersonVerseSequence = Column(Integer)
+    PersonVerseNotes = Column(String(256))
+    
+
 class Commandment(Base):
     """BibleData-Commandments table definition"""
     __tablename__ = 'commandment'

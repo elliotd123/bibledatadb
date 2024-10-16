@@ -2,3 +2,7 @@
 bible-data/
 **/*.pyc
 bible-data.db
+build/
+venv/
+*.egg-info/
+
