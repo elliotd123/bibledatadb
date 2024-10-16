@@ -4,6 +4,8 @@ This is a generator for [Brady Stephenson's bible-data files](https://github.com
 
 It generates databases and populates them via [SQLAlchemy](https://github.com/sqlalchemy/sqlalchemy)
 
+Not all tables have been implemented yet.
+
 * Any database should work that's supported by SQLAlchemy
   * Default is to create a sqlite3 database called bible-data.db in the current working directory.
 
