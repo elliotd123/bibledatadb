@@ -72,7 +72,20 @@ class PersonVerse(Base):
     PersonLabelCount = Column(Integer)
     PersonVerseSequence = Column(Integer)
     PersonVerseNotes = Column(String(256))
-    
+
+class Place(Base):
+    """BibleData-Place table definition"""
+    __tablename__ = 'place'
+    ID = Column(Integer, primary_key=True)
+    PlaceID = Column(String(256), index=True)
+    PlaceName = Column(String(256), index=True)
+    PlaceType = Column(String(256), index=True)
+    ModernEquivalent = Column(String(256))
+    PlaceNotes = Column(String(512))
+    OpenBibleID = Column(String(16))
+    OpenBibleURL = Column(String(256))
+    NameInstance = Column(Integer)
+    PlaceSequence = Column(Integer)
 
 class Commandment(Base):
     """BibleData-Commandments table definition"""

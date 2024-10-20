@@ -92,6 +92,24 @@ def populate_data():
             session.add(personVerse)
         session.commit()
 
+    #Place table
+    with open(rootFolder + 'BibleData-Place.csv', 'r') as csvfile:
+        placeReader = csv.reader(csvfile)
+        fields = next(placeReader)
+        for row in placeReader:
+            place = db.Place()
+            place.PlaceID = row[0]
+            place.PlaceName = row[1]
+            place.PlaceType = row[2]
+            place.ModernEquivalent = row[3]
+            place.PlaceNotes = row[4]
+            place.OpenBibleID = row[5]
+            place.OpenBibleURL = row[6]
+            place.NameInstance = int(row[7])
+            place.PlaceSequence = int(row[8])
+            session.add(place)
+        session.commit()
+
     # Commandments Table
     with open(rootFolder + 'BibleData-Commandments.csv', 'r') as csvfile:
         commandmentReader = csv.reader(csvfile)
